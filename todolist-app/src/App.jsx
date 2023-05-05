@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ToDoLists from './ToDoLists';
+import AddIcon from '@material-ui/icons/Add';
 const App = () => {
     const [itemValue, updatedItemValue] = useState("");
     const [item, setItems] = useState([]);
@@ -31,7 +32,7 @@ const App = () => {
                     <br />
                     <input type='text' placeholder='Add a Items' onChange={ItemEvent}
                         value={itemValue} />
-                    <button onClick={ListItems}> +</button>
+                    <button onClick={ListItems}> <AddIcon/></button>
                     <ol>
                         {item.map((ival , index) => {
                             return <ToDoLists text={ival}

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
+import CancelIcon from '@material-ui/icons/Cancel';
 const ToDoLists = (props) => {
     return (
         <><div className='todo_style'>
-        <i className="fa fa-times" aria-hidden="true" onClick={()=>{
+        <CancelIcon className= "fa-times" onClick={()=>{
             props.onSelect(props.id);
-        }}></i>
+        }}/>
             <li>{props.text}</li>
         </div>
 
