@@ -13,6 +13,15 @@ const App = () => {
         });
         updatedItemValue("");
     };
+    const DeleteItem = (id) => {
+       console.log('deleted');
+       setItems((oldItems) =>{
+          return oldItems.filter((arrElement , index)=>{
+              return index !==id;
+          }); 
+       });
+    };
+
     return (
         <>
             <div className='main_div'>
@@ -24,8 +33,11 @@ const App = () => {
                         value={itemValue} />
                     <button onClick={ListItems}> +</button>
                     <ol>
-                        {item.map((ival) => {
-                            return <ToDoLists text={ival} />;
+                        {item.map((ival , index) => {
+                            return <ToDoLists text={ival}
+                               id ={index}
+                               key ={index}
+                               onSelect={DeleteItem} />;
                         })}
 
                     </ol>
